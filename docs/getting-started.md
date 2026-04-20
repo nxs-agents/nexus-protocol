@@ -1,5 +1,9 @@
 # Getting Started
 
+> The SDK is not yet published to npm. This document describes the intended developer experience ahead of the initial release.
+
+---
+
 ## Prerequisites
 
 - Node.js 18+
@@ -65,11 +69,10 @@ console.log(`Block: ${agent.registrationBlock}`);
 agent.on('execution', (event) => {
   console.log(`[${event.type}] ${event.description}`);
   console.log(`tx: ${event.txHash}`);
-  console.log(`pnl: ${event.pnl}`);
 });
 
 agent.on('rebalance', (event) => {
-  console.log(`Rebalanced: ${event.from} -> ${event.to}`);
+  console.log(`Rebalanced: ${event.fromProtocol} -> ${event.toProtocol}`);
 });
 
 agent.on('error', (err) => {
@@ -95,17 +98,7 @@ await agent.stop();
 
 ```typescript
 const status = await agent.getStatus();
-
-console.log(status);
-// {
-//   id: '7gXK...Fd9A',
-//   strategy: 'yield_optimizer',
-//   status: 'active',
-//   uptime: 99.97,
-//   apyCurrent: 8.4,
-//   pnlTotal: '+$2,841.20',
-//   lastBlock: 19842211,
-// }
+// Returns current strategy, execution count, last block, and status
 ```
 
 ---
@@ -113,6 +106,6 @@ console.log(status);
 ## Next steps
 
 - [Agent Types](agents.md) - Explore all available strategies
-- [API Reference](api-reference.md) - Full SDK and REST API documentation
-- [Architecture](architecture.md) - Understand how NEXUS works under the hood
+- [API Reference](api-reference.md) - Full SDK and REST API reference
+- [Architecture](architecture.md) - How NEXUS works under the hood
 - [Security](security.md) - Security model and best practices

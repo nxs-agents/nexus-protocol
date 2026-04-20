@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 
 ---
 
-## [0.1.0] - 2025-04-08
+## [0.1.0] - 2026-04-21
 
 ### Added
 
@@ -23,11 +23,10 @@ All notable changes to this project are documented here.
   - `AgentVault.sol` with self-custodial spending limits
   - `INexusAgent.sol` interface
 - Documentation
-  - Architecture diagrams and sequence flows
+  - Architecture diagrams and data flow
   - Agent type reference
   - REST API and WebSocket reference
   - Security model
-  - Getting started guide
 - Examples
   - `yield-optimizer.ts`
   - `arb-trader.ts`

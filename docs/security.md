@@ -64,19 +64,19 @@ All arbitrage and rebalancing transactions are submitted via Flashbots Protect b
 
 ## Audits
 
-Smart contract audits are in progress. Reports will be published here when complete.
+Smart contracts have not yet been audited. Audits will be completed before mainnet deployment. Reports will be published in this repository when available.
 
-| Contract | Auditor | Status |
-|---|---|---|
-| NexusRegistry.sol | Pending | In progress |
-| AgentVault.sol | Pending | In progress |
-| OnchainVerifier.sol | Pending | In progress |
+| Contract | Status |
+|---|---|
+| NexusRegistry.sol | Pending audit |
+| AgentVault.sol | Pending audit |
+| OnchainVerifier.sol | Pending audit |
 
 ---
 
 ## Bug reports
 
-If you discover a security vulnerability, please do not open a public issue. Send a report to security@nxsagents.io with full details. We will respond within 48 hours.
+To report a security vulnerability, open a private GitHub issue or contact us via [Twitter](https://x.com/NXSAgents).
 
 ---
 

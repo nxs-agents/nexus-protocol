@@ -6,6 +6,8 @@ Autonomous AI agent infrastructure for Ethereum. NEXUS enables developers and tr
 [![Network](https://img.shields.io/badge/Network-Ethereum-627EEA)](https://ethereum.org)
 [![Status](https://img.shields.io/badge/Status-In%20Development-yellow)]()
 
+> **This project is in active development.** The SDK, API, and smart contracts are not yet deployed or published. This repository contains the protocol design and initial implementation.
+
 ---
 
 ## Overview
@@ -53,10 +55,10 @@ sequenceDiagram
 
 ## Packages
 
-| Package | Description |
-|---|---|
-| [`@nexus/sdk`](packages/sdk) | TypeScript SDK for deploying and managing agents |
-| [`@nexus/core`](packages/core) | Core agent engine and strategy runtime |
+| Package | Description | Status |
+|---|---|---|
+| [`@nexus/sdk`](packages/sdk) | TypeScript SDK for deploying and managing agents | In development |
+| [`@nexus/core`](packages/core) | Core agent engine and strategy runtime | In development |
 
 ---
 
@@ -71,34 +73,6 @@ sequenceDiagram
 
 ---
 
-## Quick start
-
-```bash
-npm install @nexus/sdk
-```
-
-```typescript
-import { NexusClient } from '@nexus/sdk';
-
-const client = new NexusClient({
-  network: 'mainnet',
-  rpcUrl: process.env.RPC_URL,
-  privateKey: process.env.PRIVATE_KEY,
-});
-
-const agent = await client.deploy({
-  strategy: 'yield_optimizer',
-  riskTolerance: 'moderate',
-  capital: { amount: '10000', token: 'USDC' },
-});
-
-agent.on('execution', (event) => {
-  console.log(event);
-});
-```
-
----
-
 ## Architecture
 
 See [docs/architecture.md](docs/architecture.md) for full system design.
@@ -107,7 +81,6 @@ See [docs/architecture.md](docs/architecture.md) for full system design.
 
 ## Documentation
 
-- [Getting Started](docs/getting-started.md)
 - [Architecture](docs/architecture.md)
 - [Agent Types](docs/agents.md)
 - [API Reference](docs/api-reference.md)

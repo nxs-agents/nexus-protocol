@@ -45,17 +45,6 @@ Continuously scans lending and staking protocols to find the highest available y
 }
 ```
 
-**Example output:**
-
-```
-[14:32:03] Pool scan complete: 847 pools indexed
-[14:32:04] Best APY: Lido stETH 8.4%
-[14:32:05] Position opened: 10,000 USDC
-[14:38:44] Rebalance trigger: APY delta 2.1%
-[14:38:45] Rebalanced to Aave USDC: 9.1% APY
-[14:38:46] PnL: +$184.20 (+1.84%)
-```
-
 ---
 
 ## arb_trader
@@ -94,7 +83,7 @@ Bundle with Flashbots
 Submit to block builder
         │
         ▼
-Confirm + log PnL
+Confirm + log result
 ```
 
 ---

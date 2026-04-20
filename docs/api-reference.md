@@ -1,5 +1,9 @@
 # API Reference
 
+> The REST API and WebSocket feed are not yet live. This document describes the planned API design.
+
+---
+
 ## REST API
 
 Base URL: `https://api.nxsagents.io/v1`
@@ -36,7 +40,6 @@ POST /agents
   "status": "active",
   "strategy": "yield_optimizer",
   "registration_block": 19842211,
-  "apy_current": 8.4,
   "created_at": "2025-04-08T14:32:01Z"
 }
 ```
@@ -56,10 +59,6 @@ GET /agents/:id
   "id": "7gXK...Fd9A",
   "status": "active",
   "strategy": "yield_optimizer",
-  "uptime": 99.97,
-  "apy_current": 8.4,
-  "pnl_total_usd": 2841.20,
-  "pnl_pct": 2.84,
   "last_block": 19842211,
   "executions": 1420
 }
@@ -123,7 +122,6 @@ GET /agents/:id/executions
       "from_protocol": "lido",
       "to_protocol": "aave",
       "amount_usd": 10000,
-      "pnl_usd": 184.20,
       "gas_eth": 0.0018,
       "tx_hash": "0xabc...",
       "block": 19842211,
@@ -153,23 +151,6 @@ GET /market/pools
 | `min_apy` | number | Minimum APY filter |
 | `min_tvl` | number | Minimum TVL in USD |
 
-**Response:**
-
-```json
-{
-  "data": [
-    {
-      "protocol": "lido",
-      "pool": "stETH",
-      "apy": 8.4,
-      "tvl_usd": 34000000000,
-      "token": "ETH",
-      "updated_at": "2025-04-08T14:32:04Z"
-    }
-  ]
-}
-```
-
 ---
 
 ## WebSocket API
@@ -194,15 +175,6 @@ Send on connect:
 | `APY_UPDATE` | APY change detected |
 | `ONCHAIN_VERIFY` | On-chain proof confirmed |
 | `ERROR` | Execution failed |
-
-**Example stream:**
-
-```json
-{ "type": "APY_UPDATE", "protocol": "aave", "apy": 9.1, "delta": "+0.7%" }
-{ "type": "REBALANCE", "from": "lido", "to": "aave", "amount_usd": 10000 }
-{ "type": "EXECUTION", "tx_hash": "0x...", "block": 19842212, "pnl": "+$41.20" }
-{ "type": "ONCHAIN_VERIFY", "verified": true, "ms": 142 }
-```
 
 ---
 
@@ -239,7 +211,7 @@ Subscribe to real-time agent events over WebSocket.
 
 ### agent.getStatus()
 
-Returns current agent status, PnL, and execution count.
+Returns current agent status and execution count.
 
 ### agent.pause() / agent.resume() / agent.stop()
 
