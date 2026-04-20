@@ -1,0 +1,27 @@
+{
+  "name": "nexus-protocol",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Autonomous AI agent infrastructure for Ethereum",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "lint": "eslint packages/*/src",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0",
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "keywords": ["ethereum", "defi", "ai-agents", "web3", "yield", "mev"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nxs-agents/nexus-protocol"
+  }
+}
