@@ -1,4 +1,4 @@
-# NEXUS Protocol
+# NEXUS
 
 Autonomous AI agent infrastructure for Ethereum. NEXUS enables developers and traders to deploy intelligent agents that execute DeFi strategies onchain with full verifiability and self-custodial guarantees.
 
@@ -14,7 +14,7 @@ Autonomous AI agent infrastructure for Ethereum. NEXUS enables developers and tr
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                      NEXUS PROTOCOL                         │
+│                         NEXUS                               │
 │                                                             │
 │   User Intent          Agent Engine         Ethereum        │
 │  ┌──────────┐         ┌──────────┐         ┌──────────┐    │
